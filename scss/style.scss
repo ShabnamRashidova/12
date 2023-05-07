@@ -1,0 +1,276 @@
+@font-face {
+    font-family: "Microbrew";
+    src: url("../fonts/Microbrew\ TwoD.otf") format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.title {
+    font-family: "Microbrew", sans-serif;
+
+}
+
+#container {
+    padding: 20px 0;
+}
+
+// header
+header {
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.0280267);
+    border-radius: 12px;
+    background-color: #fff;
+    margin-bottom: 20px;
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            width: 110px;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .site-lang {
+            font-family: 'Inter', sans-serif;
+            margin: 0 20px;
+
+            li {
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-family: 'Inter', sans-serif;
+                cursor: pointer;
+                position: relative;
+
+                &:hover {
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translate(0);
+                    }
+                }
+
+                i {
+                    margin-left: 5px;
+                }
+
+                ul {
+                    padding: 15px 0;
+                    position: absolute;
+                    background: #F1F3F6;
+                    border: 1px solid #F5F5F5;
+                    border-radius: 12px;
+                    width: 90px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    right: -10px;
+                    top: 35px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.4s ease;
+                    transform: translateY(5px);
+
+                    li {
+                        &:first-child {
+                            padding-bottom: 10px;
+                            margin-bottom: 15px;
+                            border-bottom: 1px solid #000;
+                        }
+
+                        a {
+                            font-weight: 600;
+                            font-size: 16px;
+                            text-align: center;
+                            color: #3E3E59;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.links {
+    .item {
+        border-radius: 24px;
+        color: #fff;
+        text-transform: uppercase;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 40px;
+        .title {
+            font-size: 60px;
+            color: #fff;
+        }
+
+        &#menu {
+            background: #DC3545;
+            background-image: url('../images/icon/menu-layout.png');
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+            .img {
+                margin-bottom: 40px;
+                width:55px;
+    
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &#branches {
+            background: #EFB505;
+            background-image: url('../images/icon/branchs-layout.png');
+            background-size: contain;
+            background-position:right;
+            background-repeat: no-repeat;
+            .img {
+                margin-bottom: 40px;
+                width:38px;
+    
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+
+    // header
+    header {
+
+        .header-content {
+            height: 90px;
+
+            .logo {
+                width: 120px;
+            }
+        }
+    }
+    // links
+    .links {
+        .item {
+            padding-left: 30px;
+            border-radius: 40px;
+            .title {
+                font-size: 45px;
+            }    
+            &#menu {
+                .img {
+                    margin-bottom: 20px;
+                    width:55px;
+                }
+            }
+    
+            &#branches {
+                .img {
+                    margin-bottom: 20px;
+                    width:38px;
+                }
+            }
+        }
+    }
+}
+@media(max-width:768px) {
+
+    // links
+    .links {
+        .item {
+            height: 260px;
+            .title {
+                font-size: 35px;
+            }    
+            &#menu {
+                .img {
+                    margin-bottom: 10px;
+                    width:35px;
+                }
+            }
+    
+            &#branches {
+                .img {
+                    margin-bottom: 10px;
+                    width:28px;
+                }
+            }
+        }
+    }
+}
+@media(max-width:576px) {
+    #container {
+        padding: 20px 15px;
+    }
+    // links
+    .links {
+        overflow-x: hidden;
+        .item {
+            height: 170px;
+            border-radius: 24px;
+            padding-left: 20px;
+            .title {
+                font-size: 25px;
+            }    
+            &#menu {
+                .img {
+                    width:30px;
+                }
+            }
+    
+            &#branches {
+                .img {
+                    width:22px;
+                }
+            }
+        }
+    }
+}
