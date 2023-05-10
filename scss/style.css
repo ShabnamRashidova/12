@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 @font-face {
   font-family: "Microbrew";
   src: url("../fonts/Microbrew One.otf") format("truetype");
+}
+@font-face {
+  font-family: "Microbrew1";
+  src: url("../fonts/Microbrew TwoD.otf") format("truetype");
 }
 * {
   margin: 0;
@@ -37,7 +42,7 @@ select {
 }
 
 .title {
-  font-family: "Microbrew", sans-serif;
+  font-family: "Microbrew1";
 }
 
 #container {
@@ -127,6 +132,13 @@ header .header-content .site-lang li ul li a:hover {
 }
 
 .links .item {
+  overflow: hidden;
+  border-radius: 24px;
+  height: 300px;
+  margin-bottom: 25px;
+}
+.links .item .item-content {
+  transition: all 0.3s ease-in;
   border-radius: 24px;
   color: #fff;
   text-transform: uppercase;
@@ -135,20 +147,22 @@ header .header-content .site-lang li ul li a:hover {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 25px;
   padding-left: 40px;
 }
-.links .item a {
-  transition: all 0.4s ease-in;
+.links .item:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.links .item a:hover {
-  transform: scale(1.01);
+.links .item:hover .item-content {
+  transform: scale(1.03);
 }
 .links .item .title {
   font-size: 60px;
   color: #fff;
 }
 .links .item#menu {
+  background-color: #DC3545;
+}
+.links .item#menu .item-content {
   background: #DC3545;
   background-image: url("../images/icon/menu-layout.png");
   background-size: contain;
@@ -164,6 +178,9 @@ header .header-content .site-lang li ul li a:hover {
 }
 .links .item#branches {
   background: #EFB505;
+}
+.links .item#branches .item-content {
+  background: #EFB505;
   background-image: url("../images/icon/branchs-layout.png");
   background-size: contain;
   background-position: right;
@@ -177,6 +194,9 @@ header .header-content .site-lang li ul li a:hover {
   width: 100%;
 }
 .links .item#vacancy {
+  background: #212121;
+}
+.links .item#vacancy .item-content {
   background: #212121;
   background-image: url("../images/icon/vacancy.png");
   background-size: contain;
@@ -195,6 +215,9 @@ header .header-content .site-lang li ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+}
+.links .item#wolt-link .item-content {
   padding: 0;
 }
 .links .item#wolt-link a {
@@ -218,6 +241,9 @@ header .header-content .site-lang li ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+}
+.links .item#bolt-link .item-content {
   padding: 0;
 }
 .links .item#bolt-link a {
@@ -269,18 +295,8 @@ footer .footer-content .social-links {
   align-items: center;
   justify-content: flex-end;
 }
-footer .footer-content .social-links li {
-  width: 48px;
-  background-color: #000;
-  height: 48px;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-  justify-content: center;
-}
-footer .footer-content .social-links li:last-child {
-  margin: 0;
+footer .footer-content .social-links li:hover {
+  transform: scale(1.03);
 }
 footer .footer-content .social-links li.facebook {
   background: linear-gradient(0deg, #0062E0 2.92%, #19AFFF 100%);
@@ -289,8 +305,18 @@ footer .footer-content .social-links li.instagram {
   background: radial-gradient(179.06% 43.44% at -16.75% 7.2%, #3771C8 0%, #3771C8 12.8%, rgba(102, 0, 255, 0) 100%), radial-gradient(92.18% 99.11% at 26.56% 107.7%, #FFDD55 0%, #FFDD55 10%, #FF543E 50%, #C837AB 100%);
 }
 footer .footer-content .social-links li a {
-  font-size: 32px;
+  font-size: 25px;
   color: #fff;
+  width: 100%;
+  display: flex;
+  width: 42px;
+  background-color: #000;
+  height: 42px;
+  margin-right: 20px;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-section .list-item {
@@ -405,6 +431,9 @@ footer .footer-content .social-links li a {
 .branches-section .single-item .single-item-body .branches-img img {
   transition: all 0.4s ease;
   width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .branches-section .single-item .single-item-body .branches-img img:hover {
   transform: scale(1.03);
@@ -428,6 +457,75 @@ footer .footer-content .social-links li a {
   color: #3E3E59;
 }
 
+.vacancy-section .vacancy-title {
+  font-family: "Microbrew";
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #212121;
+}
+.vacancy-section .single-item {
+  background-color: #F1F3F6;
+  border-radius: 12px;
+  padding: 32px 24px;
+  margin-bottom: 30px;
+}
+.vacancy-section .single-item .branch-name {
+  background-color: #FAFAFB;
+  font-family: "Inter";
+  display: inline-flex;
+  padding: 2px 10px;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #212121;
+  margin-bottom: 10px;
+}
+.vacancy-section .single-item .vacancy-name {
+  font-weight: 700;
+  font-size: 24px;
+  color: #212121;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+.vacancy-section .single-item .vacancy-desc,
+.vacancy-section .single-item .address {
+  font-family: "Inter";
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #3E3E59;
+  margin-bottom: 25px;
+}
+.vacancy-section .single-item .vacancy-desc i,
+.vacancy-section .single-item .address i {
+  margin-right: 10px;
+}
+.vacancy-section .single-item .apply {
+  color: #fff;
+  background-color: #121212;
+  border-radius: 8px;
+  width: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  text-align: center;
+  font-size: 17px;
+  font-family: "Inter";
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+.vacancy-section .single-item .apply:hover {
+  transform: scale(1.02);
+  background-color: #000;
+}
+.vacancy-section .single-item .apply i {
+  transform: rotate(-45deg);
+  margin-left: 10px;
+}
+
 @media (max-width: 992px) {
   header .header-content {
     height: 90px;
@@ -435,9 +533,8 @@ footer .footer-content .social-links li a {
   header .header-content .logo {
     width: 120px;
   }
-  .links .item {
+  .links .item .item-content {
     padding-left: 30px;
-    border-radius: 40px;
   }
   .links .item .title {
     font-size: 45px;
@@ -459,8 +556,11 @@ footer .footer-content .social-links li a {
   .links .item {
     height: 260px;
   }
+  .links .item .item-content {
+    height: 260px;
+  }
   .links .item .title {
-    font-size: 35px;
+    font-size: 38px;
   }
   .links .item#menu .img {
     margin-bottom: 15px;
@@ -507,7 +607,9 @@ footer .footer-content .social-links li a {
   }
   .links .item {
     height: 160px;
-    border-radius: 24px;
+  }
+  .links .item .item-content {
+    height: 160px;
     padding-left: 20px;
   }
   .links .item .title {
